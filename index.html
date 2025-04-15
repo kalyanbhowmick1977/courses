@@ -14,18 +14,28 @@
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #4e54c8, #8f94fb);
       color: white;
-      text-align: center;
     }
 
-    .container {
-      max-width: 500px;
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
       padding: 40px 20px;
-      margin: 0 auto;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .container, .form-container {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 10px;
+      width: 400px;
+      box-sizing: border-box;
     }
 
     h1 {
-      font-size: 4rem;
-      margin-bottom: 40px;
+      font-size: 3rem;
+      margin-bottom: 20px;
     }
 
     p {
@@ -43,7 +53,6 @@
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s ease;
       text-decoration: none;
     }
 
@@ -61,27 +70,68 @@
       margin-top: 40px;
       font-size: 0.9rem;
       opacity: 0.8;
+      text-align: center;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
 
-      p {
-        font-size: 1rem;
+    input, select {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    .submit-btn {
+      background-color: white;
+      color: #4e54c8;
+      font-weight: bold;
+      cursor: pointer;
+      padding: 12px;
+      border-radius: 30px;
+      font-size: 1rem;
+      border: none;
+    }
+
+    .submit-btn:hover {
+      background-color: #ddd;
+    }
+
+    @media (max-width: 800px) {
+      .wrapper {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>NIT-ian CLASSES</h1>
-    <p>Mathematics and Chemistry Tutorial</p>
-    <p>Class VIII TO XII AND JEE</p>
-    <a href="mailto:rect10@yahoo.com" class="btn">Contact /WhatsApp: 7278171451</a>
-    <div class="location">Location: Near St. Stephens School, Dumdum</div>
+  <div class="wrapper">
+    <div class="container">
+      <h1>NIT-ian CLASSES</h1>
+      <p>Mathematics and Chemistry Tutorial</p>
+      <p>Class VIII TO XII AND JEE</p>
+      <a href="mailto:rect10@yahoo.com" class="btn">Contact / WhatsApp: 7278171451</a>
+      <div class="location">Location: Near St. Stephens School, Dumdum</div>
+    </div>
+
+    <div class="form-container">
+      <h2>Book Free Counselling</h2>
+      <form action="mailto:rect10@yahoo.com" method="POST" enctype="text/plain">
+        <input type="text" name="Name" placeholder="Your Name" required />
+        <input type="tel" name="Phone" placeholder="Phone Number" required />
+        <input type="text" name="Stream" placeholder="Stream (e.g. Science/Commerce)" required />
+        <input type="text" name="Class" placeholder="Class (e.g. XII)" required />
+        <input type="text" name="City" placeholder="City" required />
+        <input type="submit" value="Submit" class="submit-btn" />
+      </form>
+    </div>
   </div>
+
   <footer>&copy; 2025 NIT-ian. All rights reserved.</footer>
 </body>
 </html>
